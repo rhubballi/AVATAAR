@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+  <h2>Your Dashboard</h2>
+  <p>Welcome back, {{ current_user.name or current_user.email }}.</p>
+
+  <h3>Your Products</h3>
+  <p>Quick links:</p>
+  <ul>
+    <li><a href="{{ url_for('products') }}">Browse products</a></li>
+  </ul>
+{% endblock %}

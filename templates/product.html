@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+  <h2>{{ product.title }}</h2>
+  <p>{{ product.description }}</p>
+
+  <div class="product-area">
+    <p><strong>Demo controls (placeholder)</strong></p>
+    <p>Here you can integrate your avatar UI: video preview, text input, upload controls, TTS/ASR buttons, etc.</p>
+
+    <!-- Example simple text-to-avatar placeholder -->
+    <label>Enter text to make the avatar speak (demo):</label>
+    <textarea id="avatarText" rows="4" style="width:100%"></textarea>
+    <button class="btn" id="generateBtn">Generate (demo)</button>
+
+    <div id="result" style="margin-top:1rem;"></div>
+  </div>
+
+  <script>
+    document.getElementById('generateBtn').addEventListener('click', function(){
+      const txt = document.getElementById('avatarText').value.trim();
+      const res = document.getElementById('result');
+      if(!txt) { res.innerText = 'Please enter text.'; return; }
+      res.innerHTML = '<strong>Demo generated:</strong><br>' + txt.replace(/</g,'&lt;');
+    });
+  </script>
+
+{% endblock %}

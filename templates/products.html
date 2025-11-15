@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+  <h2>Products</h2>
+  <div class="grid">
+    {% for p in products %}
+      <div class="card">
+        <div class="thumb">{{ p.title[0] }}</div>
+        <h3>{{ p.title }}</h3>
+        <p>{{ p.description }}</p>
+        <a class="btn" href="{{ url_for('product', slug=p.slug) }}">Use Product</a>
+      </div>
+    {% endfor %}
+  </div>
+{% endblock %}
